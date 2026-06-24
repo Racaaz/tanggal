@@ -4,22 +4,38 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
   <title>26.06.2026 — Tanggal Cantik 💕</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💕</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Dancing+Script:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ░░ PARTICLE CANVAS (glitter + petals) ░░ -->
+<!-- ░░ PARTICLE CANVAS ░░ -->
 <canvas id="particleCanvas"></canvas>
 
 <!-- ░░ CURSOR TRAIL ░░ -->
 <div id="cursor-trail"></div>
 
+<!-- ░░ AMBIENT GLOW ORBS ░░ -->
+<div class="ambient-orbs">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+</div>
+
 <!-- ═══════════════════════════════════════════
      PAGE 1 — MEMORIES
 ═══════════════════════════════════════════ -->
 <section class="page page-memories" id="page1">
+
+  <!-- Decorative corner flourishes -->
+  <div class="corner-flourish top-left"></div>
+  <div class="corner-flourish top-right"></div>
+  <div class="corner-flourish bottom-left"></div>
+  <div class="corner-flourish bottom-right"></div>
 
   <!-- Floating decorations -->
   <div class="float-deco" id="deco-top-left">🌹</div>
@@ -30,86 +46,136 @@
   <div class="page-inner">
     <!-- Header -->
     <div class="mem-header">
-      <p class="mem-eyebrow">✦ kenangan kita ✦</p>
+      <div class="header-ornament">❀</div>
+      <p class="mem-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>Our Memories</span>
+        <span class="eyebrow-line"></span>
+      </p>
       <h1 class="mem-title">Our <em>Sweetest</em><br/>Moments</h1>
-      <p class="mem-subtitle">Setiap foto menyimpan cerita yang nggak bisa terlupakan 🌸</p>
+      <p class="mem-subtitle">setiap momen bersamamu adalah hadiah terindah 🌸</p>
+      <div class="header-ornament-bottom">✦ ─── ✦ ─── ✦</div>
     </div>
 
-    <!-- ── POLAROID GRID ──
-         Ganti src="..." dengan foto/video kamu sendiri
-         Ganti caption di setiap .polaroid-caption
-    ── -->
+    <!-- ── POLAROID GRID ── -->
     <div class="polaroid-grid">
 
       <!-- Polaroid 1 -->
-      <div class="polaroid tilt-left">
-        <div class="polaroid-media">
-          <!-- FOTO: ganti src dengan foto kamu -->
-          <img src="https://i.pinimg.com/736x/6e/c8/e0/6ec8e065da68c8a75c62c6dd08c1d5f2.jpg" alt="Kenangan 1" loading="lazy"/>
+      <div class="polaroid tilt-left" data-reveal>
+        <div class="polaroid-inner">
+          <div class="polaroid-media">
+            <img src="https://raw.githubusercontent.com/Racaaz/tanggal/main/Photo/IMG-20260602-WA0102.jpg" alt="Kenangan 1" loading="lazy"/>
+            <div class="media-overlay"></div>
+          </div>
+          <div class="polaroid-footer">
+            <p class="polaroid-caption">✨ The cutest picture i've ever seen</p>
+            <div class="polaroid-tape"></div>
+          </div>
         </div>
-        <p class="polaroid-caption">✨ momen pertama</p>
         <div class="polaroid-stamp">📍</div>
+        <div class="polaroid-glow"></div>
       </div>
 
       <!-- Polaroid 2 -->
-      <div class="polaroid tilt-right featured">
-        <div class="polaroid-media">
-          <img src="https://i.pinimg.com/736x/a3/6e/44/a36e44d59fd7e4b2a882dc41e83e7aa7.jpg" alt="Kenangan 2" loading="lazy"/>
+      <div class="polaroid tilt-right featured" data-reveal>
+        <div class="polaroid-inner">
+          <div class="polaroid-media">
+            <img src="https://raw.githubusercontent.com/Racaaz/tanggal/main/Photo/IMG-20260408-WA0041.jpg" alt="Kenangan 2" loading="lazy"/>
+            <div class="media-overlay"></div>
+          </div>
+          <div class="polaroid-footer">
+            <p class="polaroid-caption">💕 First Photobooth</p>
+            <div class="polaroid-tape"></div>
+          </div>
         </div>
-        <p class="polaroid-caption">💕 favorit banget</p>
         <div class="polaroid-stamp">🌹</div>
+        <div class="polaroid-glow"></div>
       </div>
 
-      <!-- Polaroid 3 -->
-      <div class="polaroid tilt-left">
-        <div class="polaroid-media">
-          <img src="https://i.pinimg.com/736x/c9/f5/2e/c9f52e2dd3f4d6e8ea5c4b3a1d7f9e0a.jpg" alt="Kenangan 3" loading="lazy"
-            onerror="this.src='https://i.pinimg.com/736x/6e/c8/e0/6ec8e065da68c8a75c62c6dd08c1d5f2.jpg'"/>
+      <!-- Polaroid 3 - VIDEO -->
+      <div class="polaroid tilt-right" data-reveal>
+        <div class="polaroid-inner">
+          <div class="polaroid-media video-wrap">
+            <iframe
+              src="https://drive.google.com/file/d/1IWF5Y3BE0dy-u-I7ger0H4o5MAMRatbp/preview"
+              frameborder="0"
+              allowfullscreen
+              style="width:100%;height:100%;position:absolute;inset:0;border:none;">
+            </iframe>
+            <div class="video-badge">▶ VIDEO</div>
+          </div>
+          <div class="polaroid-footer">
+            <p class="polaroid-caption">🎬 Foto Kita Blur Trend? Done</p>
+            <div class="polaroid-tape"></div>
+          </div>
         </div>
-        <p class="polaroid-caption">🌷 hari yang indah</p>
-        <div class="polaroid-stamp">💫</div>
-      </div>
-
-      <!-- Polaroid 4 — VIDEO: ganti src dengan file video kamu -->
-      <div class="polaroid tilt-right">
-        <div class="polaroid-media video-wrap">
-          <!-- Uncomment untuk pakai video:
-          <video src="video1.mp4" autoplay muted loop playsinline></video>
-          -->
-          <!-- Sementara pakai gambar placeholder: -->
-          <img src="https://i.pinimg.com/736x/a3/6e/44/a36e44d59fd7e4b2a882dc41e83e7aa7.jpg" alt="Video kenangan" loading="lazy"/>
-          <div class="video-badge">▶ Video</div>
-        </div>
-        <p class="polaroid-caption">🎬 ingat nggak?</p>
         <div class="polaroid-stamp">🎞</div>
+        <div class="polaroid-glow"></div>
+      </div>
+
+      <!-- Polaroid 4 - VIDEO -->
+      <div class="polaroid tilt-left" data-reveal>
+        <div class="polaroid-inner">
+          <div class="polaroid-media video-wrap">
+            <iframe
+              src="https://drive.google.com/file/d/1ADUUNro9biB_49axR4R98c88WGDQfysT/preview"
+              frameborder="0"
+              allowfullscreen
+              style="width:100%;height:100%;position:absolute;inset:0;border:none;">
+            </iframe>
+            <div class="video-badge">▶ VIDEO</div>
+          </div>
+          <div class="polaroid-footer">
+            <p class="polaroid-caption">🎬 Mutar Ponti with bubub</p>
+            <div class="polaroid-tape"></div>
+          </div>
+        </div>
+        <div class="polaroid-stamp">🎞</div>
+        <div class="polaroid-glow"></div>
       </div>
 
       <!-- Polaroid 5 -->
-      <div class="polaroid tilt-left">
-        <div class="polaroid-media">
-          <img src="https://i.pinimg.com/736x/6e/c8/e0/6ec8e065da68c8a75c62c6dd08c1d5f2.jpg" alt="Kenangan 5" loading="lazy"/>
+      <div class="polaroid tilt-left" data-reveal>
+        <div class="polaroid-inner">
+          <div class="polaroid-media">
+            <img src="https://raw.githubusercontent.com/Racaaz/tanggal/main/Photo/IMG-20260408-WA0164.jpg" alt="Kenangan 3" loading="lazy"
+              onerror="this.src='https://i.pinimg.com/736x/6e/c8/e0/6ec8e065da68c8a75c62c6dd08c1d5f2.jpg'"/>
+            <div class="media-overlay"></div>
+          </div>
+          <div class="polaroid-footer">
+            <p class="polaroid-caption">🌷 My Favorite Picture</p>
+            <div class="polaroid-tape"></div>
+          </div>
         </div>
-        <p class="polaroid-caption">☀️ senyum kamu sih</p>
-        <div class="polaroid-stamp">🌺</div>
+        <div class="polaroid-stamp">💫</div>
+        <div class="polaroid-glow"></div>
       </div>
 
-      <!-- Polaroid 6 — VIDEO -->
-      <div class="polaroid tilt-right">
-        <div class="polaroid-media video-wrap">
-          <img src="https://i.pinimg.com/736x/a3/6e/44/a36e44d59fd7e4b2a882dc41e83e7aa7.jpg" alt="Video 2" loading="lazy"/>
-          <div class="video-badge">▶ Video</div>
+      <!-- Polaroid 6 -->
+      <div class="polaroid tilt-right" data-reveal>
+        <div class="polaroid-inner">
+          <div class="polaroid-media">
+            <img src="https://raw.githubusercontent.com/Racaaz/tanggal/main/Photo/IMG-20260423-WA0030.jpg" alt="Kenangan 5" loading="lazy"/>
+            <div class="media-overlay"></div>
+          </div>
+          <div class="polaroid-footer">
+            <p class="polaroid-caption">☀️ fck this is so cute</p>
+            <div class="polaroid-tape"></div>
+          </div>
         </div>
-        <p class="polaroid-caption">🎥 ketawa mulu</p>
-        <div class="polaroid-stamp">💝</div>
+        <div class="polaroid-stamp">🌺</div>
+        <div class="polaroid-glow"></div>
       </div>
 
     </div><!-- /polaroid-grid -->
 
     <!-- Scroll CTA -->
     <div class="scroll-cta" id="scrollCta">
+      <div class="cta-sparkle">✦</div>
       <p>ada sesuatu untukmu 🥺</p>
       <div class="scroll-arrow" onclick="goToPage2()">
-        <span>↓</span>
+        <span class="arrow-icon">↓</span>
+        <div class="arrow-ripple"></div>
       </div>
     </div>
 
@@ -121,6 +187,9 @@
 ═══════════════════════════════════════════ -->
 <section class="page page-confession hidden" id="page2">
 
+  <div class="corner-flourish top-left"></div>
+  <div class="corner-flourish top-right"></div>
+
   <div class="float-deco" id="deco2-tl">🌹</div>
   <div class="float-deco" id="deco2-tr">💖</div>
   <div class="float-deco" id="deco2-bl">🌷</div>
@@ -128,46 +197,59 @@
 
   <!-- COUNTDOWN BAR -->
   <div class="countdown-bar">
-    <div class="cd-label">✨ Menuju <strong>26 Juni 2026</strong></div>
-    <div class="cd-units">
-      <div class="cd-unit"><span id="cd-d">--</span><small>Hari</small></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><span id="cd-h">--</span><small>Jam</small></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><span id="cd-m">--</span><small>Menit</small></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><span id="cd-s">--</span><small>Detik</small></div>
+    <div class="cd-glow"></div>
+    <div class="cd-content">
+      <div class="cd-label">✨ Menuju <strong>26 Juni 2026</strong></div>
+      <div class="cd-units">
+        <div class="cd-unit"><span id="cd-d">--</span><small>Hari</small></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span id="cd-h">--</span><small>Jam</small></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span id="cd-m">--</span><small>Menit</small></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span id="cd-s">--</span><small>Detik</small></div>
+      </div>
     </div>
   </div>
 
   <div class="confession-inner">
 
     <!-- Back button -->
-    <button class="btn-back" onclick="goToPage1()">← kenangan</button>
+    <button class="btn-back" onclick="goToPage1()">
+      <span class="back-arrow">←</span>
+      <span>kenangan</span>
+    </button>
 
     <!-- Photo -->
     <div class="conf-photo-wrap">
       <div class="conf-photo-ring">
-        <!-- Ganti src dengan foto utama kamu -->
+        <div class="ring-sparkle ring-sparkle-1">✦</div>
+        <div class="ring-sparkle ring-sparkle-2">✦</div>
+        <div class="ring-sparkle ring-sparkle-3">✦</div>
         <img src="https://i.pinimg.com/736x/a3/6e/44/a36e44d59fd7e4b2a882dc41e83e7aa7.jpg" alt="Us" id="main-photo"/>
       </div>
-      <div class="conf-photo-tag">— 26 · 06 · 2026 —</div>
+      <div class="conf-photo-tag">
+        <span class="tag-line"></span>
+        <span>26 · 06 · 2026</span>
+        <span class="tag-line"></span>
+      </div>
     </div>
 
     <!-- Glass letter -->
     <div class="glass-card">
+      <div class="card-border-glow"></div>
       <div class="card-rose top-rose">🌹</div>
 
-      <!-- Ganti nama penerima di sini -->
-      <p class="greeting">Untuk <span class="name-highlight" id="recipient-name">Namanya</span>,</p>
+      <p class="greeting">For my bubub <span class="name-highlight" id="recipient-name">Nella</span>,</p>
 
-      <!-- Ganti isi surat di sini -->
       <div class="letter-body">
-        <p>Sudah lama aku simpan rasa ini — takut salah langkah, takut merusak sesuatu yang indah antara kita.</p>
-        <p>Tapi hari ini, di tanggal yang sudah lama aku tunggu-tunggu ini, aku beranikan diri.</p>
-        <p>Kamu tahu nggak, setiap kali kamu senyum, rasanya dunia sedikit lebih cerah dari biasanya? Dan setiap kenangan di halaman sebelumnya — semuanya terasa spesial <em>karena ada kamu.</em></p>
-        <p>Aku nggak minta jadi yang sempurna. Aku cuma minta jadi yang <em>kamu pilih</em>. 🌸</p>
-        <p class="letter-closing">Dengan sepenuh hati,<br/><strong id="sender-name">Namaku</strong></p>
+        <p>Sayanggg, makasiii yaaa buat semuaanyaa, ku benar benar bersyukurr bangett bisa sama kamuu, ku belajar banyak hal, tau lebih banyak. <strong>Look what you did... you made me smarter!</strong> tengkyuuuu. </p>
+        <p>Dari yang awalnya nda kenal, bahkan negur pun nda mau, Eh tiba tiba jadi seplenger ini.  Maybe it's fate. I hope so.
+        </p>
+        <p>Ku pengen punya kekuatan ngendaliin waktu deh, soalnya tiap main bareng dedek, waktu ni kaya singkat bangettt, ku mau memperlambat waktu biar bisa lebih lama mainnya, atau mungkin ngeberhentiin waktu? kayanya seruu.
+        <p>Oh yaaa, dedek tau ngga cii, ku punya something yang lagi dibuat khusus buat dedek, dan niatnya bakal jadi kado buat ultah kamu nantii. So tungguin yahh... <em>wuppyuuu sayanggg</em></p>
+        <p>Pesan buat dedekk, kalo lagi sama abg, jangan jadi cewe yang mandiri yaa, repotin abg di setiap kesibukanmu, ceritain semuaaa masalah kamu, jangan sungkan buat minta tolong.<em> Cause you're special for me...</em>. 🌸</p>
+        <p class="letter-closing">Dengan sepenuh hati,<br/><strong id="sender-name">adit limitid edisyon</strong></p>
       </div>
 
       <div class="card-rose bottom-rose">🌷</div>
@@ -175,11 +257,15 @@
 
     <!-- Question -->
     <div class="question-wrap">
-      <p class="question-text">Jadi… mau nggak jadi<br/><em>tanggal cantikku?</em> 🥺</p>
+      <div class="question-decoration">💕</div>
+      <p class="question-text">So… mau nggak jadi<br/><em>tanggal cantikku?</em> 🥺</p>
 
       <div class="btn-arena" id="btnArena">
-        <button class="btn-yes" id="btnYes" onclick="handleYes()">💕 Mau Banget!</button>
-        <button class="btn-no"  id="btnNo"
+        <button class="btn-yes" id="btnYes" onclick="handleYes()">
+          <span class="btn-yes-glow"></span>
+          <span class="btn-yes-text">💕 Mau Banget!</span>
+        </button>
+        <button class="btn-no" id="btnNo"
           onmouseover="dodgeNo(event)"
           ontouchstart="dodgeNo(event)">🙈 Nggak Mau</button>
       </div>
@@ -189,16 +275,31 @@
 
     <!-- Response (hidden) -->
     <div class="response-wrap hidden" id="responseWrap">
+      <div class="response-confetti" id="responseConfetti"></div>
       <div class="response-emoji">🎉💕🌹✨</div>
-      <!-- Ganti teks respons di sini -->
-      <h2 id="responseTitle">Horeeeee!! 🥳</h2>
-      <p id="responseMsg">Aku tahu dari tadi kamu mau pilih ini 😄<br/>Sampai ketemu di <strong>26 Juni 2026</strong> ya~</p>
+      <h2 id="responseTitle">Aselole jos!! 🥳</h2>
+      <p id="responseMsg">Pasti tadi mencet tombol yang satunye tuu....<br/><strong>But isokee, maaaciww yaa sayangg buat semuanyaaa <strong/></p>
       <div class="response-hearts">💖💕💗💓💝</div>
     </div>
 
   </div><!-- /confession-inner -->
 </section>
 
-<script src="script.js"></script>
+<!-- ░░ MUSIC PLAYER ░░ -->
+<div class="music-player" id="musicPlayer">
+  <button class="music-toggle" id="musicToggle" onclick="toggleMusic()">
+    <span class="music-icon">🎵</span>
+    <span class="music-bars">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+  <div class="music-info" id="musicInfo">
+    <span class="music-song-name">♪ Shape of My Heart</span>
+    <span class="music-artist">Backstreet Boys</span>
+  </div>
+</div>
+
+
+<script type="module" src="script.js"></script>
 </body>
 </html>
